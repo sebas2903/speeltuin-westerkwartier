@@ -135,7 +135,16 @@ class Gastenboek extends Widget_Base {
         ?>
 
         <?php
-        echo "<p style=color:black;>test</p>";
+        echo "
+        <form method="post">
+            <?php echo $error; ?>
+            <label>Naam:</label><br><input  type="text" name="naam" /> <br>
+            <label>email:</label><br><input  type="email" name="email" /> <br>
+            <label>bericht:</label><br><input  type="textarea" name="bericht" /> <br>
+            <input type="submit" name="add" value="Reactie plaatsen"/>
+        </form>
+        
+        ";
         require('dbconnect.php');
 	}
 
@@ -149,7 +158,16 @@ class Gastenboek extends Widget_Base {
 	 * @access protected
 	 */
 	protected function _content_template() {
-        echo "<p style=color:black;>test</p>";
+        echo "
+        <form method="post">
+            <?php echo $error; ?>
+            <label>Naam:</label><br><input  type="text" name="naam" /> <br>
+            <label>email:</label><br><input  type="email" name="email" /> <br>
+            <label>bericht:</label><br><input  type="textarea" name="bericht" /> <br>
+            <input type="submit" name="add" value="Reactie plaatsen"/>
+        </form>
+        
+        ";
             
 	}
 }
