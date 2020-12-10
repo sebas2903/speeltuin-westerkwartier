@@ -131,6 +131,45 @@ class Gastenboek extends Widget_Base {
 	 */
 	protected function render() {
 		$settings = $this->get_settings_for_display();
+        $error ="";
+        if(isset($_POST['add'])) {
+            if(!empty($_POST['naam'])){
+                if(!empty($_POST['email'])){
+                    if(!empty($_POST['bericht'])){
+                        require('dbconnect.php');
+                        function safe($waarde){
+                        $waarde = trim($waarde);
+                        $waarde = stripslashes($waarde);
+                        $waarde = htmlspecialchars($waarde);
+                        return $waarde;
+                        }
+                        
+                        $naam = safe($_POST['naam']);
+                        $naam = $conn->real_escape_string($naam);
+                        $email = safe($_POST['email']);
+                        $email = $conn->real_escape_string($email);
+                        $bericht = safe($_POST['bericht']);
+                        $bericht = $conn->real_escape_string($bericht);
+                        
+                        $sql = "INSERT INTO mFD13_comments(comment_ID, comment_post_ID, comment_author, comment_author_email, comment_author_url, comment_author_IP, comment_date, ,comment_date_gmt, comment_content, comment_karma ,comment_approved, comment_agent, comment_type, comment_parent, user_id) VALUES (NULL, '5463', '$naam', '$email', '', '', 'date("F j, Y, g:i a")', 'date("F j, Y, g:i a")', '$bericht', '0', '0', '', 'comment', '0', '0')";
+                        
+                        if($conn->query($sql)){
+                            $error ="<br> account aangemaakt <br>";
+                        }
+                        else{
+                            $error ="<br> er is iets fout gegaan <br>";
+                        } 
+                    }else{
+                        $error="<br>bericht is niet ingevult<br>";
+                    }
+                }else{
+                    $error="<br>email is niet ingevult<br>";
+                }
+            }else{
+                $error="<br>naam is niet ingevult<br>";
+            }
+        }
+    }
         
         ?>
         <form method=post style="color:black;">
@@ -141,7 +180,6 @@ class Gastenboek extends Widget_Base {
             <input type=submit name=add value=Reactie plaatsen/>
         </form>
         <?php
-        require('dbconnect.php');
 	}
 
 	/**
@@ -157,9 +195,9 @@ class Gastenboek extends Widget_Base {
         ?>
         <form method=post style="color:black;">
             <?php echo $error; ?>
-            <label>Naam:</label><br><input  type=text name=naam /> <br>
-            <label>email:</label><br><input  type=email name=email /> <br>
-            <label>bericht:</label><br><input  type=textarea name=bericht /> <br>
+            <label>Naam:</label><input  type=text name=naam /> <br>
+            <label>email:</label><input  type=email name=email /> <br>
+            <label>bericht:</label><input style="width:100%; height:10vh;"  type=textarea name=bericht /> <br>
             <input type=submit name=add value=Reactie plaatsen/>
         </form>
         <?php
