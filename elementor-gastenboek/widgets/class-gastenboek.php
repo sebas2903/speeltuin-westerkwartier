@@ -152,7 +152,7 @@ class Gastenboek extends Widget_Base {
                         $bericht = $conn->real_escape_string($bericht);
                         
                         $sql = "INSERT INTO mFD13_comments
-                        (comment_ID, comment_post_ID, comment_author, comment_author_email, comment_author_url, comment_author_IP, comment_date, ,comment_date_gmt, comment_content, comment_karma ,comment_approved, comment_agent, comment_type, comment_parent, user_id) 
+                        (comment_ID, comment_post_ID, comment_author, comment_author_email, comment_author_url, comment_author_IP, comment_date, comment_date_gmt, comment_content, comment_karma, comment_approved, comment_agent, comment_type, comment_parent, user_id) 
                         VALUES (NULL, '5463', '$naam', '$email', '', '', '0000-00-00 00:00:00.000000', '0000-00-00 00:00:00.000000', '$bericht', '0', '0', '', 'comment', '0', '0')";
                         
                         if($conn->query($sql)){
