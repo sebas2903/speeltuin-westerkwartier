@@ -169,9 +169,7 @@ class Gastenboek extends Widget_Base {
                 $error="<br>naam is niet ingevult<br>";
             }
         }
-    }
-        
-        ?>
+    ?>
         <form method=post style="color:black;">
             <?php echo $error; ?>
             <label>Naam:</label><input  type=text name=naam /> <br>
