@@ -136,12 +136,12 @@ class Gastenboek extends Widget_Base {
 
         <?php
         echo "
-        <form method="post">
+        <form method=post>
             <?php echo $error; ?>
-            <label>Naam:</label><br><input  type="text" name="naam" /> <br>
-            <label>email:</label><br><input  type="email" name="email" /> <br>
-            <label>bericht:</label><br><input  type="textarea" name="bericht" /> <br>
-            <input type="submit" name="add" value="Reactie plaatsen"/>
+            <label>Naam:</label><br><input  type=text name=naam /> <br>
+            <label>email:</label><br><input  type=email name=email /> <br>
+            <label>bericht:</label><br><input  type=textarea name=bericht /> <br>
+            <input type=submit name=add value=Reactie plaatsen/>
         </form>
         
         ";
@@ -159,12 +159,12 @@ class Gastenboek extends Widget_Base {
 	 */
 	protected function _content_template() {
         echo "
-        <form method="post">
+        <form method=post>
             <?php echo $error; ?>
-            <label>Naam:</label><br><input  type="text" name="naam" /> <br>
-            <label>email:</label><br><input  type="email" name="email" /> <br>
-            <label>bericht:</label><br><input  type="textarea" name="bericht" /> <br>
-            <input type="submit" name="add" value="Reactie plaatsen"/>
+            <label>Naam:</label><br><input  type=text name=naam /> <br>
+            <label>email:</label><br><input  type=email name=email /> <br>
+            <label>bericht:</label><br><input  type=textarea name=bericht /> <br>
+            <input type=submit name=add value=Reactie plaatsen/>
         </form>
         
         ";
