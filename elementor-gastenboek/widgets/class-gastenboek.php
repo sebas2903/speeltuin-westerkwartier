@@ -135,9 +135,9 @@ class Gastenboek extends Widget_Base {
         ?>
         <form method=post style="color:black;">
             <?php echo $error; ?>
-            <label>Naam:</label><br><input  type=text name=naam /> <br>
-            <label>email:</label><br><input  type=email name=email /> <br>
-            <label>bericht:</label><br><input style="width:100%; height:10vh;"  type=textarea name=bericht /> <br>
+            <label>Naam:</label><input  type=text name=naam /> <br>
+            <label>email:</label><input  type=email name=email /> <br>
+            <label>bericht:</label><input style="width:100%; height:10vh;"  type=textarea name=bericht /> <br>
             <input type=submit name=add value=Reactie plaatsen/>
         </form>
         <?php
