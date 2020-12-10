@@ -133,7 +133,7 @@ class Gastenboek extends Widget_Base {
 		$settings = $this->get_settings_for_display();
         
         ?>
-        <form method=post>
+        <form method=post style="color:black;">
             <?php echo $error; ?>
             <label>Naam:</label><br><input  type=text name=naam /> <br>
             <label>email:</label><br><input  type=email name=email /> <br>
@@ -155,7 +155,7 @@ class Gastenboek extends Widget_Base {
 	 */
 	protected function _content_template() {
         ?>
-        <form method=post>
+        <form method=post style="color:black;">
             <?php echo $error; ?>
             <label>Naam:</label><br><input  type=text name=naam /> <br>
             <label>email:</label><br><input  type=email name=email /> <br>
