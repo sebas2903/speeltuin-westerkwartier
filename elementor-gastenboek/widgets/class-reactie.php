@@ -132,11 +132,11 @@ class Reactie extends Widget_Base {
 	 */
 	protected function render() {
         require('dbconnect.php');
-        $sql = "SELECT comment_author FROM mFD13_comments WHERE comment_post_ID = 5463";
+        $sql = "SELECT comment_author, comment_content FROM mFD13_comments WHERE comment_post_ID = 5463 AND comment_approved = 1";
         $result = $conn->query($sql);
-        $print = $result->fetch_assoc($result)
+        $row = $result->fetch_assoc()
         ?>
-        <p style="color:black;"><?php echo $print; ?></p>
+        <p style="color:black;"><?php echo $row["comment_author"]; ?></p>
         <?php
 	}
 
@@ -151,11 +151,10 @@ class Reactie extends Widget_Base {
 	 */
 	protected function _content_template() {
         require('dbconnect.php');
-        $sql = "SELECT comment_author FROM mFD13_comments WHERE comment_post_ID = 5463";
+        $sql = "SELECT comment_author, comment_content FROM mFD13_comments WHERE comment_post_ID = 5463 AND comment_approved = 1;";
         $result = $conn->query($sql);
-        $print = $result->fetch_assoc()
         ?>
-        <p style="color:black;"><?php echo $print; ?></p>
+        <p style="color:black;"><?php echo $result; ?></p>
         <?php
             
 	}
