@@ -132,7 +132,7 @@ class Reactie extends Widget_Base {
 	 */
 	protected function render() {
         require('dbconnect.php');
-        $sql = "SELECT comment_author, comment_content FROM mFD13_comments WHERE comment_post_ID = 5463 AND comment_approved = 1 ORDER BY comment_date_gmt DESC";
+        $sql = "SELECT comment_author, comment_content, comment_date_gmt FROM mFD13_comments WHERE comment_post_ID = 5463 AND comment_approved = 1 ORDER BY comment_date_gmt DESC";
         $result = $conn->query($sql);
             
         if ($result->num_rows > 0) {
@@ -141,6 +141,7 @@ class Reactie extends Widget_Base {
                 echo "
                 <div>
                     <p style=color:black;>".$row["comment_author"]."</p>
+                    <p style=color:black;>".$row["comment_date_gmt"]."</p>
                     <p style=color:black;>".$row["comment_content"]."</p>
                 </div>";
             }
