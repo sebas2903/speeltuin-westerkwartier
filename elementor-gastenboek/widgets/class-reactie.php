@@ -140,7 +140,7 @@ class Reactie extends Widget_Base {
             echo "<div>";
             // output data of each row
             while($row = $result->fetch_assoc()) {
-                echo "<p>".$row["comment_author"]."</p>";
+                echo "<p style=color:black;>".$row["comment_author"]."</p>";
             }
         echo "</div>";
         }   
