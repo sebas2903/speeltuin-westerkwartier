@@ -228,7 +228,7 @@ class Reactie extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'reactie';
+		return 'reactie-gastenboek';
 	}
 
 	/**
@@ -241,7 +241,7 @@ class Reactie extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Reactie', 'elementor-gastenboek' );
+		return __( 'reactie-gastenboek', 'elementor-gastenboek' );
 	}
 
 	/**
@@ -279,7 +279,7 @@ class Reactie extends Widget_Base {
 	 * Enqueue styles.
 	 */
 	public function get_style_depends() {
-		return array( 'reactie' );
+		return array( 'gastenboek' );
 	}
 
 	/**
@@ -388,3 +388,4 @@ class Reactie extends Widget_Base {
             
 	}
 }
+
