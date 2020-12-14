@@ -151,7 +151,8 @@ class Gastenboek extends Widget_Base {
                         $bericht = safe($_POST['bericht']);
                         $bericht = $conn->real_escape_string($bericht);
                         $today = date('Y-m-d H:i:s');
-                        $tz = 'Europe/Amsterdam';
+                        
+                        $tz = 'Europe/Londen';
                         $timestamp = time();
                         $dt = new DateTime("now", new DateTimeZone($tz)); //first argument "must" be a string
                         $dt->setTimestamp($timestamp);
