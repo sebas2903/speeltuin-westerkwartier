@@ -157,19 +157,19 @@ class Gastenboek extends Widget_Base {
                         VALUES (NULL, '5463', '$naam', '$email', '', '', '$today', '$today', '$bericht', '0', '0', '', 'comment', '0', '0')";
                         
                         if($conn->query($sql)){
-                            $error ="<br><div style='border-radius:10px; border:1px solid green;'>reactie is binnen, het moet wel nog verwerkt worden.</div <br>";
+                            $error ="<br><div style='border-radius:10px; border:1px solid green; margin-top:2vh; margin-bottom:2vh; '><p>reactie is binnen, het moet wel nog verwerkt worden.</p></div <br>";
                         }
                         else{
-                            $error ="<br><div style='border-radius:10px; border:1px solid red;'>er is iets fout gegaan</div> <br>";
+                            $error ="<br><div style='border-radius:10px; border:1px solid red;'><p>Er is iets fout gegaan</p></div> <br>";
                         } 
                     }else{
-                        $error="<br><div style='border-radius:10px; border:1px solid yellow;'>bericht is niet ingevult</div<br>";
+                        $error="<br><div style='border-radius:10px; border:1px solid yellow;'><p>Bericht is niet ingevult</p></div><br>";
                     }
                 }else{
-                    $error="<br><div style='border-radius:10px; border:1px solid yellow;'>email is niet ingevult</div<br>";
+                    $error="<br><div style='border-radius:10px; border:1px solid yellow;'><p>Email is niet ingevult</p></div><br>";
                 }
             }else{
-                $error="<br><div style='border-radius:10px; border:1px solid yellow;'>naam is niet ingevult</div><br>";
+                $error="<br><div style='border-radius:10px; border:1px solid yellow;'><p>Naam is niet ingevult</p></div><br>";
             }
         }
         ?>
