@@ -137,12 +137,12 @@ class Reactie extends Widget_Base {
         $row = $result->fetch_assoc();
             
         if ($result->num_rows > 0) {
-            echo "<table><tr><th>ID</th><th>Name</th></tr>";
+            echo "<div>";
             // output data of each row
             while($row = $result->fetch_assoc()) {
-                echo $row["comment_author"];
+                echo "<p>".$row["comment_author"]."</p>";
             }
-        echo "</table>";
+        echo "</div>";
         }   
 
 	}
