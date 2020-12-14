@@ -135,9 +135,16 @@ class Reactie extends Widget_Base {
         $sql = "SELECT comment_author, comment_content FROM mFD13_comments WHERE comment_post_ID = 5463 AND comment_approved = 1";
         $result = $conn->query($sql);
         $row = $result->fetch_assoc()
-        ?>
-        <p style="color:black;"><?php echo $row["comment_author"]; ?></p>
-        <?php
+            
+        if ($result->num_rows > 0) {
+            echo "<table><tr><th>ID</th><th>Name</th></tr>";
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+                echo $row["comment_author"];
+            }
+        echo "</table>";
+        }   
+
 	}
 
 	/**
