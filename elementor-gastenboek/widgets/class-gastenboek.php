@@ -157,19 +157,19 @@ class Gastenboek extends Widget_Base {
                         VALUES (NULL, '5463', '$naam', '$email', '', '', '$today', '$today', '$bericht', '0', '0', '', 'comment', '0', '0')";
                         
                         if($conn->query($sql)){
-                            $error ="<br><div style=border-radius:10px; border:1px solid green;>reactie is binnen, het moet wel nog verwerkt worden.</div <br>";
+                            $error ="<br><div style='border-radius:10px; border:1px solid green;'>reactie is binnen, het moet wel nog verwerkt worden.</div <br>";
                         }
                         else{
-                            $error ="<br></div style=border-radius:10px; border:1px solid red;>er is iets fout gegaan</div> <br>";
+                            $error ="<br><div style='border-radius:10px; border:1px solid red;'>er is iets fout gegaan</div> <br>";
                         } 
                     }else{
-                        $error="<br><div style=border-radius:10px; border:1px solid yellow;>bericht is niet ingevult</div<br>";
+                        $error="<br><div style='border-radius:10px; border:1px solid yellow;'>bericht is niet ingevult</div<br>";
                     }
                 }else{
-                    $error="<br><div style=border-radius:10px; border:1px solid yellow;>email is niet ingevult</div<br>";
+                    $error="<br><div style='border-radius:10px; border:1px solid yellow;'>email is niet ingevult</div<br>";
                 }
             }else{
-                $error="<br><div style=border-radius:10px; border:1px solid yellow;>naam is niet ingevult</div><br>";
+                $error="<br><div style='border-radius:10px; border:1px solid yellow;'>naam is niet ingevult</div><br>";
             }
         }
         ?>
