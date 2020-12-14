@@ -47,7 +47,7 @@ class Reactie extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'reactie-gastenboek';
+		return 'Gastenboek-reactie';
 	}
 
 	/**
@@ -60,7 +60,7 @@ class Reactie extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'reactie-gastenboek', 'elementor-gastenboek' );
+		return __( 'Gastenboek-reactie', 'elementor-gastenboek' );
 	}
 
 	/**
@@ -98,7 +98,7 @@ class Reactie extends Widget_Base {
 	 * Enqueue styles.
 	 */
 	public function get_style_depends() {
-		return array( 'reactie-gastenboek' );
+		return array( 'Gastenboek-reactie' );
 	}
 
 	/**
@@ -131,56 +131,9 @@ class Reactie extends Widget_Base {
 	 * @access protected
 	 */
 	protected function render() {
-		$settings = $this->get_settings_for_display();
-        $error ="";
-        if(isset($_POST['add'])) {
-            if(!empty($_POST['naam'])){
-                if(!empty($_POST['email'])){
-                    if(!empty($_POST['bericht'])){
-                        require('dbconnect.php');
-                        function safe($waarde){
-                        $waarde = trim($waarde);
-                        $waarde = stripslashes($waarde);
-                        $waarde = htmlspecialchars($waarde);
-                        return $waarde;
-                        }
-                        
-                        $naam = safe($_POST['naam']);
-                        $naam = $conn->real_escape_string($naam);
-                        $email = safe($_POST['email']);
-                        $email = $conn->real_escape_string($email);
-                        $bericht = safe($_POST['bericht']);
-                        $bericht = $conn->real_escape_string($bericht);
-                        $today = date('Y-m-d H:i:s'); 
-                        
-                        $sql = "INSERT INTO mFD13_comments
-                        (comment_ID, comment_post_ID, comment_author, comment_author_email, comment_author_url, comment_author_IP, comment_date, comment_date_gmt, comment_content, comment_karma, comment_approved, comment_agent, comment_type, comment_parent, user_id) 
-                        VALUES (NULL, '5463', '$naam', '$email', '', '', '$today', '$today', '$bericht', '0', '0', '', 'comment', '0', '0')";
-                        
-                        if($conn->query($sql)){
-                            $error ="<br><div style='border-radius:10px; border:1px solid green; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center; '><p style='margin:0; line-height:2; display:flex; align-items:center;'>reactie is binnen, het moet wel nog verwerkt worden.</p></div <br>";
-                        }
-                        else{
-                            $error ="<br><div style='border-radius:10px; border:1px solid red; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; line-height:2; display:flex; align-items:center;'>Er is iets fout gegaan</p></div> <br>";
-                        } 
-                    }else{
-                        $error="<br><div style='border-radius:10px; border:1px solid orange; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; line-height:2; display:flex; align-items:center;'>Bericht is niet ingevult</p></div><br>";
-                    }
-                }else{
-                    $error="<br><div style='border-radius:10px; border:1px solid orange; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; line-height:2; display:flex; align-items:center;'>Email is niet ingevult</p></div><br>";
-                }
-            }else{
-                $error="<br><div style='border-radius:10px; border:1px solid orange; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; line-height:2; display:flex; align-items:center;'>Naam is niet ingevult</p></div><br>";
-            }
-        }
+
         ?>
-        <form method=post style="color:black;">
-            <label>Uw naam*</label><input style="border-radius:10px;"  type=text name=naam /> <br>
-            <label>Uw e-mailadres*</label><input style="border-radius:10px;"  type=email name=email /> <br>
-            <label>Uw bericht*</label><textarea style="border-radius:10px;" style="width:100%; border-radius:10xpx;" name=bericht> </textarea><br>
-            <input type=submit name=add style="border-radius:10px; color:white; background-color:#004020;" value="Reactie plaatsen"/>
-            <?php echo $error; ?>
-        </form>
+
         <?php
 	}
 
@@ -195,12 +148,7 @@ class Reactie extends Widget_Base {
 	 */
 	protected function _content_template() {
         ?>
-        <form method=post style="color:black;">
-            <label>Uw naam*</label><input style="border-radius:10px;"  type=text name=naam /> <br>
-            <label>Uw e-mailadres*</label><input style="border-radius:10px;"  type=email name=email /> <br>
-            <label>Uw bericht*</label><textarea style="border-radius:10px;" style="width:100%; border-radius:10xpx;" name=bericht> </textarea><br>
-            <input type=submit name=add style="border-radius:10px; color:white; background-color:#004020;" value="Reactie plaatsen"/>
-        </form>
+
         <?php
         require('dbconnect.php');
             
