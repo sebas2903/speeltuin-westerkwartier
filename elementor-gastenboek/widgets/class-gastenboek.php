@@ -18,7 +18,7 @@ use Elementor\Scheme_Typography;
 
 ?>
 <style>
-<?php include './includes/css/form.css'; ?>
+<?php include '../includes/css/form.css'; ?>
 </style>
 <?php
 
