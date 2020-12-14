@@ -151,12 +151,8 @@ class Gastenboek extends Widget_Base {
                         $bericht = safe($_POST['bericht']);
                         $bericht = $conn->real_escape_string($bericht);
                         $today = date('Y-m-d H:i:s');
-                        
-                        $tz = 'Europe/Londen';
-                        $timestamp = time();
-                        $dt = new DateTime("now", new DateTimeZone($tz)); //first argument "must" be a string
-                        $dt->setTimestamp($timestamp);
-                        $todaycorrecttimezone = $dt->format('d.m.Y, H:i:s');
+                        date_default_timezone_set('Europe/Amsterdam');
+                        $todaycorrecttimezone = ('d.m.Y, H:i:s');
                         
                         $sql = "INSERT INTO mFD13_comments
                         (comment_ID, comment_post_ID, comment_author, comment_author_email, comment_author_url, comment_author_IP, comment_date, comment_date_gmt, comment_content, comment_karma, comment_approved, comment_agent, comment_type, comment_parent, user_id) 
