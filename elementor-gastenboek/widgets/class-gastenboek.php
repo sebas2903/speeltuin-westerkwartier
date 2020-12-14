@@ -172,7 +172,7 @@ class Gastenboek extends Widget_Base {
                 $error="<br>naam is niet ingevult<br>";
             }
         }
-        $css = file_get_contents("../includes/form.css");
+        $css = file_get_contents("../elementor-gastenboek/includes/css/form.css");
         echo $css;
         ?>
 
