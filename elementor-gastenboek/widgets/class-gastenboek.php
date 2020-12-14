@@ -10,7 +10,11 @@
  * @since      1.0.0
  * php version 7.3.9
  */
-
+?>
+<style>
+<?php include './includes/css/form.css'; ?>
+</style>
+<?php
 namespace ElementorGastenboek\Widgets;
 
 use Elementor\Widget_Base;
@@ -174,9 +178,9 @@ class Gastenboek extends Widget_Base {
         }
     ?>
         <form method=post style="color:black;">
-            <label>Naam:</label><input  type=text name=naam /> <br>
-            <label>email:</label><input  type=email name=email /> <br>
-            <label>bericht:</label><textarea style="width:100%; height:10vh;" name=bericht> </textarea><br>
+            <label>Uw naam*</label><input  type=text name=naam /> <br>
+            <label>Uw e-mailadres*</label><input  type=email name=email /> <br>
+            <label>Uw bericht*</label><textarea class="txtarea-style" name=bericht> </textarea><br>
             <input type=submit name=add value=Reactie plaatsen/>
             <?php echo $error; ?>
         </form>
@@ -198,7 +202,7 @@ class Gastenboek extends Widget_Base {
             <?php echo $error; ?>
             <label>Naam:</label><input  type=text name=naam /> <br>
             <label>email:</label><input  type=email name=email /> <br>
-            <label>bericht:</label><input style="width:100%; height:10vh;"  type=textarea name=bericht /> <br>
+            <label>bericht:</label><input class="txtarea-style"  type=textarea name=bericht /> <br>
             <input type=submit name=add value=Reactie plaatsen/>
         </form>
         <?php
