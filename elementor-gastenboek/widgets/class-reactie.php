@@ -131,8 +131,8 @@ class Reactie extends Widget_Base {
 	 * @access protected
 	 */
 	protected function render() {
-         $sql = "SELECT comment_author FROM mFD13_comments WHERE comment_post_ID = 5463";
         require('dbconnect.php');
+        $sql = "SELECT comment_author FROM mFD13_comments WHERE comment_post_ID = 5463";
         ?>
         <p><?php echo $sql; ?></p>
         <?php
@@ -148,10 +148,11 @@ class Reactie extends Widget_Base {
 	 * @access protected
 	 */
 	protected function _content_template() {
-        ?>
-
-        <?php
         require('dbconnect.php');
+        $sql = "SELECT comment_author FROM mFD13_comments WHERE comment_post_ID = 5463";
+        ?>
+        <p><?php echo $sql; ?></p>
+        <?php
             
 	}
 }
