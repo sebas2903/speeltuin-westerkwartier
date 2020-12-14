@@ -195,7 +195,6 @@ class Gastenboek extends Widget_Base {
 	protected function _content_template() {
         ?>
         <form method=post style="color:black;">
-            <?php echo $error; ?>
             <label>Naam:</label><input  type=text name=naam /> <br>
             <label>email:</label><input  type=email name=email /> <br>
             <label>bericht:</label><input class="txtarea-style"  type=textarea name=bericht /> <br>
@@ -228,7 +227,7 @@ class Reactie extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'reactie-gastenboek';
+		return 'reactie';
 	}
 
 	/**
@@ -241,7 +240,7 @@ class Reactie extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Reactie-gastenboek', 'elementor-gastenboek' );
+		return __( 'Reactie', 'elementor-gastenboek' );
 	}
 
 	/**
@@ -279,7 +278,7 @@ class Reactie extends Widget_Base {
 	 * Enqueue styles.
 	 */
 	public function get_style_depends() {
-		return array( 'reactie-gastenboek' );
+		return array( 'reactie' );
 	}
 
 	/**
