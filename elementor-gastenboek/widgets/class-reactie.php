@@ -131,9 +131,10 @@ class Reactie extends Widget_Base {
 	 * @access protected
 	 */
 	protected function render() {
-
+         $sql = "SELECT comment_author FROM mFD13_comments WHERE comment_post_ID = 5463";
+        require('dbconnect.php');
         ?>
-
+        <p><?php echo $sql; ?></p>
         <?php
 	}
 
