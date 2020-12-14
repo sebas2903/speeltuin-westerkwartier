@@ -132,21 +132,20 @@ class Reactie extends Widget_Base {
 	 */
 	protected function render() {
         require('dbconnect.php');
-        $sql = "SELECT comment_author, comment_content FROM mFD13_comments WHERE comment_post_ID = 5463 AND comment_approved = 1";
+        $sql = "SELECT comment_author, comment_content, datum-zonder-tijd FROM mFD13_comments WHERE comment_post_ID = 5463 AND comment_approved = 1";
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
             
         if ($result->num_rows > 0) {
-            echo "<div>";
             // output data of each row
             while($row = $result->fetch_assoc()) {
                 echo "
                 <div>
                     <p style=color:black;>".$row["comment_author"]."</p>
+                    <p style=color:black;>".$row["datum-zonder-tijd"]."</p>
                     <p style=color:black;>".$row["comment_content"]."</p>
-                /div>";
+                </div>";
             }
-        echo "</div>";
         }   
 
 	}
