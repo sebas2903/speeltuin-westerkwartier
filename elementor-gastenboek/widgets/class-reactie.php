@@ -133,8 +133,9 @@ class Reactie extends Widget_Base {
 	protected function render() {
         require('dbconnect.php');
         $sql = "SELECT comment_author FROM mFD13_comments WHERE comment_post_ID = 5463";
+        $result = $conn->query($sql);
         ?>
-        <p style="color:black;"><?php echo $sql; ?></p>
+        <p style="color:black;"><?php echo $result; ?></p>
         <?php
 	}
 
@@ -150,8 +151,9 @@ class Reactie extends Widget_Base {
 	protected function _content_template() {
         require('dbconnect.php');
         $sql = "SELECT comment_author FROM mFD13_comments WHERE comment_post_ID = 5463";
+        $result = $conn->query($sql);
         ?>
-        <p style="color:black;"><?php echo $sql; ?></p>
+        <p style="color:black;"><?php echo $result; ?></p>
         <?php
             
 	}
