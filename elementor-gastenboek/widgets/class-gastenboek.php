@@ -157,33 +157,27 @@ class Gastenboek extends Widget_Base {
                         VALUES (NULL, '5463', '$naam', '$email', '', '', '$today', '$today', '$bericht', '0', '0', '', 'comment', '0', '0')";
                         
                         if($conn->query($sql)){
-                            $error ="<br>reactie is binnen, het moet wel nog verwerkt worden. <br>";
+                            $error ="<br><div style=border-radius:10xpx; border:1px solid green>reactie is binnen, het moet wel nog verwerkt worden.</div <br>";
                         }
                         else{
-                            $error ="<br> er is iets fout gegaan <br>";
+                            $error ="<br></div style=border-radius:10xpx; border:1px solid red>er is iets fout gegaan</div> <br>";
                         } 
                     }else{
-                        $error="<br>bericht is niet ingevult<br>";
+                        $error="<br><div style=border-radius:10xpx; border:1px solid yellow>bericht is niet ingevult</div<br>";
                     }
                 }else{
-                    $error="<br>email is niet ingevult<br>";
+                    $error="<br><div style=border-radius:10xpx; border:1px solid yellow>email is niet ingevult</div<br>";
                 }
             }else{
-                $error="<br>naam is niet ingevult<br>";
+                $error="<br><div style=border-radius:10xpx; border:1px solid yellow>naam is niet ingevult</div><br>";
             }
         }
         ?>
-        <style>
-            .txtearea-style{
-                width:100%;
-                height:10vh;
-            }
-        </style>
         <form method=post style="color:black;">
-            <label>Uw naam*</label><input  type=text name=naam /> <br>
-            <label>Uw e-mailadres*</label><input  type=email name=email /> <br>
-            <label>Uw bericht*</label><textarea class="txtarea-style" name=bericht> </textarea><br>
-            <input type=submit name=add value=Reactie plaatsen/>
+            <label>Uw naam*</label><input style="border-radius:10xpx;"  type=text name=naam /> <br>
+            <label>Uw e-mailadres*</label><input style="border-radius:10xpx;"  type=email name=email /> <br>
+            <label>Uw bericht*</label><textarea style="border-radius:10xpx;" style="width:100%; height:10vh; border-radius:10xpx;" name=bericht> </textarea><br>
+            <input type=submit name=add style="border-radius:10xpx; color:white; background-color:#004020;" value="Reactie plaatsen"/>
             <?php echo $error; ?>
         </form>
         <?php
