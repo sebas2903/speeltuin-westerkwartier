@@ -10,16 +10,17 @@
  * @since      1.0.0
  * php version 7.3.9
  */
-?>
-<style>
-<?php include './includes/css/form.css'; ?>
-</style>
-<?php
 namespace ElementorGastenboek\Widgets;
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Scheme_Typography;
+
+?>
+<style>
+<?php include './includes/css/form.css'; ?>
+</style>
+<?php
 
 // Security Note: Blocks direct access to the plugin PHP files.
 defined( 'ABSPATH' ) || die();
