@@ -143,7 +143,7 @@ class Reactie extends Widget_Base {
                 echo "
                 <div>
                     <p style=color:black;>".$row["comment_author"]."</p>
-                    <p>".$row["comment_content"]."</p>
+                    <p style=color:black;>".$row["comment_content"]."</p>
                 /div>";
             }
         echo "</div>";
