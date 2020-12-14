@@ -172,10 +172,13 @@ class Gastenboek extends Widget_Base {
                 $error="<br>naam is niet ingevult<br>";
             }
         }
-        $css = file_get_contents("../form.css");
-        echo $css;
         ?>
-
+        <style>
+            .txtearea-style{
+                width:100%;
+                height:10vh;
+            }
+        </style>
         <form method=post style="color:black;">
             <label>Uw naam*</label><input  type=text name=naam /> <br>
             <label>Uw e-mailadres*</label><input  type=email name=email /> <br>
