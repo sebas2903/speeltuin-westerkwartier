@@ -173,8 +173,11 @@ class Gastenboek extends Widget_Base {
             }
         }
     ?>  
-        
-        <head><link rel="stylesheet" href="../includes/css/form.css" type="text/css"></head>
+        <?php
+            $css = file_get_contents('../includes/css/form.css');
+            echo $css;
+        ?>
+
         <form method=post style="color:black;">
             <label>Uw naam*</label><input  type=text name=naam /> <br>
             <label>Uw e-mailadres*</label><input  type=email name=email /> <br>
