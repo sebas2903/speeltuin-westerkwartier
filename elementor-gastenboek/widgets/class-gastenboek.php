@@ -172,10 +172,8 @@ class Gastenboek extends Widget_Base {
                 $error="<br>naam is niet ingevult<br>";
             }
         }
-    ?>  
-        <?php
-            $css = file_get_contents('../includes/css/form.css');
-            echo $css;
+        $css = file_get_contents("../includes/css/form.css");
+        echo $css;
         ?>
 
         <form method=post style="color:black;">
