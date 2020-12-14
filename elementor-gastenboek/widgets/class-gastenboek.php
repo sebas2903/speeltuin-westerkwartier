@@ -16,11 +16,6 @@ use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Scheme_Typography;
 
-?>
-<style>
-<?php include '../includes/css/form.css'; ?>
-</style>
-<?php
 
 // Security Note: Blocks direct access to the plugin PHP files.
 defined( 'ABSPATH' ) || die();
@@ -177,7 +172,9 @@ class Gastenboek extends Widget_Base {
                 $error="<br>naam is niet ingevult<br>";
             }
         }
-    ?>
+    ?>  
+        
+        <head><link rel="stylesheet" href="../includes/css/form.css" type="text/css"></head>
         <form method=post style="color:black;">
             <label>Uw naam*</label><input  type=text name=naam /> <br>
             <label>Uw e-mailadres*</label><input  type=email name=email /> <br>
