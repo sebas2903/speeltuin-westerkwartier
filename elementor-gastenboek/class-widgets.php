@@ -64,6 +64,7 @@ class Widgets {
 	 */
 	private function include_widgets_files() {
 		require_once 'widgets/class-gastenboek.php';
+        require_once 'widgets/class-reactie.php';
 	}
 
 	/**
@@ -80,6 +81,7 @@ class Widgets {
 
 		// Register the plugin widget classes.
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\gastenboek() );
+        \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\reactie() );
 	}
 
 	/**

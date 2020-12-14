@@ -1,6 +1,6 @@
 <?php
 /**
- * Gastenboek class.
+ * reactie class.
  *
  * @category   Class
  * @package    ElementorGastenboek
