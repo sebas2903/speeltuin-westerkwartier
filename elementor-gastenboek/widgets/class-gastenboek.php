@@ -195,10 +195,11 @@ class Gastenboek extends Widget_Base {
 	protected function _content_template() {
         ?>
         <form method=post style="color:black;">
-            <label>Naam:</label><input  type=text name=naam /> <br>
-            <label>email:</label><input  type=email name=email /> <br>
-            <label>bericht:</label><input class="txtarea-style"  type=textarea name=bericht /> <br>
-            <input type=submit name=add value=Reactie plaatsen/>
+            <label>Uw naam*</label><input style="border-radius:10px;"  type=text name=naam /> <br>
+            <label>Uw e-mailadres*</label><input style="border-radius:10px;"  type=email name=email /> <br>
+            <label>Uw bericht*</label><textarea style="border-radius:10px;" style="width:100%; border-radius:10xpx;" name=bericht> </textarea><br>
+            <input type=submit name=add style="border-radius:10px; color:white; background-color:#004020;" value="Reactie plaatsen"/>
+            <?php echo $error; ?>
         </form>
         <?php
         require('dbconnect.php');
@@ -376,11 +377,11 @@ class Reactie extends Widget_Base {
 	protected function _content_template() {
         ?>
         <form method=post style="color:black;">
+            <label>Uw naam*</label><input style="border-radius:10px;"  type=text name=naam /> <br>
+            <label>Uw e-mailadres*</label><input style="border-radius:10px;"  type=email name=email /> <br>
+            <label>Uw bericht*</label><textarea style="border-radius:10px;" style="width:100%; border-radius:10xpx;" name=bericht> </textarea><br>
+            <input type=submit name=add style="border-radius:10px; color:white; background-color:#004020;" value="Reactie plaatsen"/>
             <?php echo $error; ?>
-            <label>Naam:</label><input  type=text name=naam /> <br>
-            <label>email:</label><input  type=email name=email /> <br>
-            <label>bericht:</label><input class="txtarea-style"  type=textarea name=bericht /> <br>
-            <input type=submit name=add value=Reactie plaatsen/>
         </form>
         <?php
         require('dbconnect.php');
