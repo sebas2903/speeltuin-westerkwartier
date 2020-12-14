@@ -134,7 +134,7 @@ class Reactie extends Widget_Base {
         require('dbconnect.php');
         $sql = "SELECT comment_author, comment_content FROM mFD13_comments WHERE comment_post_ID = 5463 AND comment_approved = 1";
         $result = $conn->query($sql);
-        $row = $result->fetch_assoc()
+        $row = $result->fetch_assoc();
             
         if ($result->num_rows > 0) {
             echo "<table><tr><th>ID</th><th>Name</th></tr>";
