@@ -25,7 +25,8 @@ defined( 'ABSPATH' ) || die();
  *
  * @since 1.0.0
  */
-class Gastenboek extends Widget_Base {
+
+class Reactie extends Widget_Base {
 	/**
 	 * Class constructor.
 	 *
@@ -46,7 +47,7 @@ class Gastenboek extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'gastenboek';
+		return 'reactie-gastenboek';
 	}
 
 	/**
@@ -59,7 +60,7 @@ class Gastenboek extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Gastenboek', 'elementor-gastenboek' );
+		return __( 'reactie-gastenboek', 'elementor-gastenboek' );
 	}
 
 	/**
@@ -97,7 +98,7 @@ class Gastenboek extends Widget_Base {
 	 * Enqueue styles.
 	 */
 	public function get_style_depends() {
-		return array( 'gastenboek' );
+		return array( 'reactie-gastenboek' );
 	}
 
 	/**
@@ -205,4 +206,3 @@ class Gastenboek extends Widget_Base {
             
 	}
 }
-
