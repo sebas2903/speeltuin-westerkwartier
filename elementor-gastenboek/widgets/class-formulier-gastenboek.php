@@ -1,6 +1,6 @@
 <?php
 /**
- * Gastenboek class.
+ * Formulier-gastenboek class.
  *
  * @category   Class
  * @package    ElementorGastenboek
@@ -25,7 +25,7 @@ defined( 'ABSPATH' ) || die();
  *
  * @since 1.0.0
  */
-class Gastenboek extends Widget_Base {
+class Formuliergastenboek extends Widget_Base {
 	/**
 	 * Class constructor.
 	 *
@@ -46,7 +46,7 @@ class Gastenboek extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'gastenboek';
+		return 'Formulier-gastenboek';
 	}
 
 	/**
@@ -59,7 +59,7 @@ class Gastenboek extends Widget_Base {
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return __( 'Gastenboek', 'elementor-gastenboek' );
+		return __( 'Formulier-gastenboek', 'elementor-gastenboek' );
 	}
 
 	/**
@@ -97,7 +97,7 @@ class Gastenboek extends Widget_Base {
 	 * Enqueue styles.
 	 */
 	public function get_style_depends() {
-		return array( 'gastenboek' );
+		return array( 'Formulier-gastenboek' );
 	}
 
 	/**
