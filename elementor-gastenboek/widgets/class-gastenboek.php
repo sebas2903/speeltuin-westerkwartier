@@ -159,14 +159,26 @@ class Gastenboek extends Widget_Base {
                         if($conn->query($sql)){
                             $error ="<br><div style='border-radius:10px; border:3px solid green; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center; '><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>reactie is binnen, het moet wel nog verwerkt worden.</p></div <br>";
                             
-                            $to      = 'site@speeltuinwesterkwartier.nl';
-                            $subject = 'Reactie van '.$naam;
-                            $message = $naam.' heeft een reactie geplaats op speeltuinwesterkwartier.nl<br><br>Het bericht:'.$bericht;
-                            $headers = 
-                            'From: site@speeltuinwesterkwartier.nl' . "\r\n" .
-                            'X-Mailer: PHP/' . phpversion();
+                            $mail = new PHPMailer();
 
-                            mail($to, $subject, $message, $headers);
+                            // Settings
+                            $mail->IsSMTP();
+                            $mail->CharSet = 'UTF-8';
+
+                            $mail->Host       = "mail02.compleet.it"; // SMTP server example
+                            $mail->SMTPDebug  = 0;                     // enables SMTP debug information (for testing)
+                            $mail->SMTPAuth   = true;                  // enable SMTP authentication
+                            $mail->Port       = 465;                    // set the SMTP port for the GMAIL server
+                            $mail->Username   = "site@speeltuinwesterkwartier.nl"; // SMTP account username example
+                            $mail->Password   = "password";        // SMTP account password example
+
+                            // Content
+                            $mail->isHTML(true);                                  // Set email format to HTML
+                            $mail->Subject = 'Reactie van '.$naam;
+                            $mail->Body    = $naam.' heeft een reactie geplaats op speeltuinwesterkwartier.nl<br><br>Het bericht:'.$bericht;
+                            $mail->AltBody = $naam.' heeft een reactie geplaats op speeltuinwesterkwartier.nl<br><br>Het bericht:'.$bericht;
+
+                            $mail->send();
                         }
                         else{
                             $error ="<br><div style='border-radius:10px; border:3px solid red; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Er is iets fout gegaan</p></div> <br>";
