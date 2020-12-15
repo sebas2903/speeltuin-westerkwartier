@@ -139,10 +139,10 @@ class Reactie extends Widget_Base {
             // output data of each row
             while($row = $result->fetch_assoc()) {
                 echo "
-                <div>
-                    <p style='color:black; margin:0;'>".$row["comment_author"]."</p>
-                    <p style=color:black;>".$row["comment_date_gmt"]."</p>
-                    <p style=color:black;>".$row["comment_content"]."</p>
+                <div style='width:100%; border:1px solid #004020; border-radius:10px'>
+                    <p style='color:black; margin:0px; margin-left:1vw;'>".$row["comment_author"]."</p>
+                    <p style='color:black; margin:0px; margin-left:1vw;'>".$row["comment_date_gmt"]."</p>
+                    <p style='color:black; margin-top:3vh; margin-left:1vw;' margin-top:2vh;>".$row["comment_content"]."</p>
                 </div>";
             }
         }   
@@ -160,12 +160,20 @@ class Reactie extends Widget_Base {
 	 */
 	protected function _content_template() {
         require('dbconnect.php');
-        $sql = "SELECT comment_author, comment_content FROM mFD13_comments WHERE comment_post_ID = 5463 AND comment_approved = 1;";
+        $sql = "SELECT comment_author, comment_content, comment_date_gmt FROM mFD13_comments WHERE comment_post_ID = 5463 AND comment_approved = 1 ORDER BY comment_date_gmt DESC";
         $result = $conn->query($sql);
-        $row = $result->fetch_assoc()
-        ?>
-        <p style="color:black;"><?php echo $row["comment_author"]; ?></p>
-        <?php
+            
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+                echo "
+                <div>
+                    <p style='color:black; margin:0;'>".$row["comment_author"]."</p>
+                    <p style=color:black;>".$row["comment_date_gmt"]."</p>
+                    <p style=color:black;>".$row["comment_content"]."</p>
+                </div>";
+            }
+        }  
             
 	}
 }
