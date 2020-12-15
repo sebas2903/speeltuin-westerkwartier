@@ -17,7 +17,9 @@ use Elementor\Controls_Manager;
 use Elementor\Scheme_Typography;
 
 use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+
 
 require 'vendor/autoload.php';
 
