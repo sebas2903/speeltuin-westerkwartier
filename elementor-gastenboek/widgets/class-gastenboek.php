@@ -173,20 +173,20 @@ class Gastenboek extends Widget_Base {
                             $mail->IsSMTP();
                             $mail->CharSet = 'UTF-8';
 
-                            $mail->Host       = "mail02.compleet.it"; // SMTP server example
-                            $mail->SMTPAuth   = true;                  // enable SMTP authentication
+                            $mail->Host       = "mail02.compleet.it"; 
+                            $mail->SMTPAuth   = true;                  
                             $mail->SMTPSecure = "ssl";
-                            $mail->Port       = 465;                    // set the SMTP port for the GMAIL server
-                            $mail->Username   = "site@speeltuinwesterkwartier.nl"; // SMTP account username example
-                            $mail->Password   = $SMTPWW;      // SMTP account password example
+                            $mail->Port       = 465;                    
+                            $mail->Username   = "site@speeltuinwesterkwartier.nl"; 
+                            $mail->Password   = $SMTPWW;      
                             $mail->setFrom('site@speeltuinwesterkwartier.nl','Speeltuinwesterkwartier');
                             $mail->addAddress('site@speeltuinwesterkwartier.nl');
 
                             // Content
-                            $mail->isHTML(true);                                  // Set email format to HTML
+                            $mail->isHTML(true);                                  
                             $mail->Subject = 'Reactie van '.$naam;
-                            $mail->Body    = $naam.' heeft een reactie geplaats op speeltuinwesterkwartier.nl<br><br>Het bericht:'.$bericht;
-                            $mail->AltBody = $naam.' heeft een reactie geplaats op speeltuinwesterkwartier.nl<br><br>Het bericht:'.$bericht;
+                            $mail->Body    = $naam.' heeft een reactie geplaats op speeltuinwesterkwartier.nl<br>Met email: '.$email.'<br><br>Het bericht: '.$bericht;
+                            $mail->AltBody = $naam.' heeft een reactie geplaats op speeltuinwesterkwartier.nl<br><br>Het bericht: '.$bericht;
 
                             $mail->send();
                         }
