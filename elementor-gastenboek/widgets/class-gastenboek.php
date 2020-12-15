@@ -157,27 +157,27 @@ class Gastenboek extends Widget_Base {
                         VALUES (NULL, '5463', '$naam', '$email', '', '', '$today', '$today', '$bericht', '0', '0', '', 'comment', '0', '0')";
                         
                         if($conn->query($sql)){
-                            $error ="<br><div style='border-radius:10px; border:1px solid green; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center; '><p style='margin:0; line-height:2; display:flex; align-items:center;'>reactie is binnen, het moet wel nog verwerkt worden.</p></div <br>";
+                            $error ="<br><div style='border-radius:10px; border:1px solid green; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center; '><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>reactie is binnen, het moet wel nog verwerkt worden.</p></div <br>";
                         }
                         else{
-                            $error ="<br><div style='border-radius:10px; border:1px solid red; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; line-height:2; display:flex; align-items:center;'>Er is iets fout gegaan</p></div> <br>";
+                            $error ="<br><div style='border-radius:10px; border:1px solid red; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Er is iets fout gegaan</p></div> <br>";
                         } 
                     }else{
-                        $error="<br><div style='border-radius:10px; border:1px solid orange; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; line-height:2; display:flex; align-items:center;'>Bericht is niet ingevult</p></div><br>";
+                        $error="<br><div style='border-radius:10px; border:1px solid orange; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Bericht is niet ingevult</p></div><br>";
                     }
                 }else{
-                    $error="<br><div style='border-radius:10px; border:1px solid orange; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; line-height:2; display:flex; align-items:center;'>Email is niet ingevult</p></div><br>";
+                    $error="<br><div style='border-radius:10px; border:1px solid orange; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Email is niet ingevult</p></div><br>";
                 }
             }else{
-                $error="<br><div style='border-radius:10px; border:1px solid orange; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; line-height:2; display:flex; align-items:center;'>Naam is niet ingevult</p></div><br>";
+                $error="<br><div style='border-radius:10px; border:1px solid orange; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Naam is niet ingevult</p></div><br>";
             }
         }
         ?>
         <form method=post style="color:black;">
-            <label>Uw naam*</label><input style="border-radius:10px;"  type=text name=naam /> <br>
-            <label>Uw e-mailadres*</label><input style="border-radius:10px;"  type=email name=email /> <br>
-            <label>Uw bericht*</label><textarea style="border-radius:10px; width:100%; height:25vh; border-radius:10xpx;" name=bericht> </textarea><br>
-            <input type=submit name=add style="border-radius:10px; color:white; background-color:#004020;" value="Reactie plaatsen"/>
+            <label style='font-size:2rem;'>Uw naam*</label><input style="border-radius:10px; font-size:2rem;"  type=text name=naam /> <br>
+            <label style='font-size:2rem;'>Uw e-mailadres*</label><input style="border-radius:10px; font-size:2rem;"  type=email name=email /> <br>
+            <label style='font-size:2rem;'>Uw bericht*</label><textarea style="border-radius:10px; font-size:2rem; width:100%; height:25vh; border-radius:10xpx;" name=bericht> </textarea><br>
+            <input type=submit name=add style="border-radius:10px; color:white; background-color:#004020; font-size:2rem;" value="Reactie plaatsen"/>
             <?php echo $error; ?>
         </form>
         <?php
