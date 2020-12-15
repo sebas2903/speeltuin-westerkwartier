@@ -139,10 +139,10 @@ class Reactie extends Widget_Base {
             // output data of each row
             while($row = $result->fetch_assoc()) {
                 echo "
-                <div style='width:100%; border:1px solid #004020; border-radius:10px'>
-                    <p style='color:black; margin:0px; margin-left:1vw;'>".$row["comment_author"]."</p>
-                    <p style='color:black; margin:0px; margin-left:1vw;'>".$row["comment_date_gmt"]."</p>
-                    <p style='color:black; margin-top:3vh; margin-left:1vw;' margin-top:2vh;>".$row["comment_content"]."</p>
+                <div style='width:100%; border:1px solid #004020; border-radius:10px; margin-top:2vh;'>
+                    <h4 style='color:black; margin:0px; margin-left:1vw; font-size:2.5rem; '>".$row["comment_author"]."</h4>
+                    <p style='color:black; margin:0px; margin-left:1vw; font-size:1.5rem;'>".$row["comment_date_gmt"]."</p>
+                    <p style='color:black; margin-top:3vh; margin-left:1vw;' margin-top:2vh; font-size:2rem;>".$row["comment_content"]."</p>
                 </div>";
             }
         }   
