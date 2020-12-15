@@ -16,6 +16,10 @@ use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
 use Elementor\Scheme_Typography;
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'vendor/autoload/php';
 
 // Security Note: Blocks direct access to the plugin PHP files.
 defined( 'ABSPATH' ) || die();
@@ -171,6 +175,8 @@ class Gastenboek extends Widget_Base {
                             $mail->Port       = 465;                    // set the SMTP port for the GMAIL server
                             $mail->Username   = "site@speeltuinwesterkwartier.nl"; // SMTP account username example
                             $mail->Password   = "password";        // SMTP account password example
+                            $mail->setFrom('site@speeltuinwesterkwartier.nl','Speeltuinwesterkwartier');
+                            $mail->addAddress('site@speeltuinwesterkwartier.nl')
 
                             // Content
                             $mail->isHTML(true);                                  // Set email format to HTML
