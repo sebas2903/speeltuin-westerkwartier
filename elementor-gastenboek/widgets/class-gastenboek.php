@@ -176,7 +176,7 @@ class Gastenboek extends Widget_Base {
                             $mail->Username   = "site@speeltuinwesterkwartier.nl"; // SMTP account username example
                             $mail->Password   = "password";        // SMTP account password example
                             $mail->setFrom('site@speeltuinwesterkwartier.nl','Speeltuinwesterkwartier');
-                            $mail->addAddress('site@speeltuinwesterkwartier.nl')
+                            $mail->addAddress('site@speeltuinwesterkwartier.nl');
 
                             // Content
                             $mail->isHTML(true);                                  // Set email format to HTML
