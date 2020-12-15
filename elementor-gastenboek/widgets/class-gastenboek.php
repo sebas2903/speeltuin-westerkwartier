@@ -157,19 +157,19 @@ class Gastenboek extends Widget_Base {
                         VALUES (NULL, '5463', '$naam', '$email', '', '', '$today', '$today', '$bericht', '0', '0', '', 'comment', '0', '0')";
                         
                         if($conn->query($sql)){
-                            $error ="<br><div style='border-radius:10px; border:1px solid green; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center; '><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>reactie is binnen, het moet wel nog verwerkt worden.</p></div <br>";
+                            $error ="<br><div style='border-radius:10px; border:3px solid green; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center; '><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>reactie is binnen, het moet wel nog verwerkt worden.</p></div <br>";
                         }
                         else{
-                            $error ="<br><div style='border-radius:10px; border:1px solid red; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Er is iets fout gegaan</p></div> <br>";
+                            $error ="<br><div style='border-radius:10px; border:3px solid red; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Er is iets fout gegaan</p></div> <br>";
                         } 
                     }else{
-                        $error="<br><div style='border-radius:10px; border:1px solid orange; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Bericht is niet ingevult</p></div><br>";
+                        $error="<br><div style='border-radius:10px; border:3px solid orange; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Bericht is niet ingevult</p></div><br>";
                     }
                 }else{
-                    $error="<br><div style='border-radius:10px; border:1px solid orange; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Email is niet ingevult</p></div><br>";
+                    $error="<br><div style='border-radius:10px; border:3px solid orange; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Email is niet ingevult</p></div><br>";
                 }
             }else{
-                $error="<br><div style='border-radius:10px; border:1px solid orange; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Naam is niet ingevult</p></div><br>";
+                $error="<br><div style='border-radius:10px; border:3px solid orange; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Naam is niet ingevult</p></div><br>";
             }
         }
         ?>
