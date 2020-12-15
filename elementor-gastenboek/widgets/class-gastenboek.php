@@ -170,7 +170,7 @@ class Gastenboek extends Widget_Base {
                             $mail->CharSet = 'UTF-8';
 
                             $mail->Host       = "mail02.compleet.it"; // SMTP server example
-                            $mail->SMTPDebug  = 0;                     // enables SMTP debug information (for testing)
+                            $mail->SMTPDebug  = 2;                     // enables SMTP debug information (for testing)
                             $mail->SMTPAuth   = true;                  // enable SMTP authentication
                             $mail->Port       = 465;                    // set the SMTP port for the GMAIL server
                             $mail->Username   = "site@speeltuinwesterkwartier.nl"; // SMTP account username example
