@@ -158,6 +158,15 @@ class Gastenboek extends Widget_Base {
                         
                         if($conn->query($sql)){
                             $error ="<br><div style='border-radius:10px; border:3px solid green; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center; '><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>reactie is binnen, het moet wel nog verwerkt worden.</p></div <br>";
+                            
+                            $to      = 'site@speeltuinwesterkwartier.nl';
+                            $subject = 'Reactie van '.$naam;
+                            $message = $naam.' heeft een reactie geplaats op speeltuinwesterkwartier.nl<br><br>Het bericht:'.$bericht;
+                            $headers = 
+                            'From: site@speeltuinwesterkwartier.nl' . "\r\n" .
+                            'X-Mailer: PHP/' . phpversion();
+
+                            mail($to, $subject, $message, $headers);
                         }
                         else{
                             $error ="<br><div style='border-radius:10px; border:3px solid red; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Er is iets fout gegaan</p></div> <br>";
