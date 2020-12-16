@@ -137,7 +137,8 @@ class Nieuwsbrief extends Widget_Base {
 	 */
 	protected function render() {
 		$settings = $this->get_settings_for_display();
-    }
+        
+        
         ?>
         <form method=post style="color:black;">
 
