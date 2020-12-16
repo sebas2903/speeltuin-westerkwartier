@@ -21,7 +21,7 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 
-require 'vendor/autoload.php';
+require '../../elementor-gastenboek/widgets/class-reactie.php';
 
 // Security Note: Blocks direct access to the plugin PHP files.
 defined( 'ABSPATH' ) || die();
