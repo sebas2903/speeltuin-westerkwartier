@@ -3,14 +3,14 @@
  * Nieuwsbrief class.
  *
  * @category   Class
- * @package    ElementorNieuwsbrief
+ * @package    ElementorGastenboek
  * @subpackage WordPress
  * @author     Sebastiaan Heerema
  * @copyright  2020 Sebastiaan Heerema
  * @since      1.0.0
  * php version 7.3.9
  */
-namespace ElementorNieuwsbrief\Widgets;
+namespace ElementorGastenboek\Widgets;
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
@@ -21,7 +21,7 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 
-require '../../elementor-gastenboek/widgets/vendor/autoload.php';
+require 'vendor/autoload.php';
 
 // Security Note: Blocks direct access to the plugin PHP files.
 defined( 'ABSPATH' ) || die();
@@ -52,7 +52,7 @@ class Nieuwsbrief extends Widget_Base {
 	 * @return string Widget name.
 	 */
 	public function get_name() {
-		return 'nieuwsbrief';
+		return 'Nieuwsbrief';
 	}
 
 	/**
@@ -103,7 +103,7 @@ class Nieuwsbrief extends Widget_Base {
 	 * Enqueue styles.
 	 */
 	public function get_style_depends() {
-		return array( 'nieuwsbrief' );
+		return array( 'Nieuwsbrief' );
 	}
 
 	/**
@@ -119,7 +119,7 @@ class Nieuwsbrief extends Widget_Base {
 		$this->start_controls_section(
 			'section_content',
 			array(
-				'label' => __( 'Content', 'elementor-nieuwsbrief' ),
+				'label' => __( 'Content', 'elementor-gastenboek' ),
 			)
 		);
 
@@ -136,12 +136,8 @@ class Nieuwsbrief extends Widget_Base {
 	 * @access protected
 	 */
 	protected function render() {
-		$settings = $this->get_settings_for_display();
-        
-        
         ?>
         <form method=post style="color:black;">
-
         </form>
         <?php
 	}
@@ -158,7 +154,7 @@ class Nieuwsbrief extends Widget_Base {
 	protected function _content_template() {
         ?>
         <form method=post style="color:black;">
-
+            
         </form>
         <?php
         require('dbconnect.php');
