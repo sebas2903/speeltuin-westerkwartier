@@ -83,6 +83,7 @@ class Widgets {
 		// Register the plugin widget classes.
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\gastenboek() );
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\reactie() );
+        \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\nieuwsbrief() );
 	}
 
 	/**
