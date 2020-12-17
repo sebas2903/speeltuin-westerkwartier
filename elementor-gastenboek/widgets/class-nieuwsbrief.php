@@ -151,7 +151,7 @@ class Nieuwsbrief extends Widget_Base {
                         
                         $sql = "INSERT INTO mFD13_newsletter
                         (email, id, created) 
-                        VALUES ($email, NULL, '$naam')";
+                        VALUES ($email, NULL, '')";
                         
                         if($conn->query($sql)){
                             $error ="<br><div style='border-radius:10px; border:3px solid green; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center; '><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Uw bent ingeschreven</p></div <br>";
