@@ -136,8 +136,63 @@ class Nieuwsbrief extends Widget_Base {
 	 * @access protected
 	 */
 	protected function render() {
+        if(isset($_POST['add'])) {
+            if(!empty($_POST['email'])){
+                        require('dbconnect.php');
+                        function safe($waarde){
+                        $waarde = trim($waarde);
+                        $waarde = stripslashes($waarde);
+                        $waarde = htmlspecialchars($waarde);
+                        return $waarde;
+                        }
+    
+                        $email = safe($_POST['email']);
+                        $email = $conn->real_escape_string($email);
+                        
+                        $sql = "INSERT INTO mFD13_newsletter
+                        (email, id, created) 
+                        VALUES ($email, NULL, '$naam')";
+                        
+                        if($conn->query($sql)){
+                            $error ="<br><div style='border-radius:10px; border:3px solid green; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center; '><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Uw bent ingeschreven</p></div <br>";
+                            
+                            
+                            
+                            $mail = new PHPMailer(true);
+
+                            // Settings
+                            $mail->IsSMTP();
+                            $mail->CharSet = 'UTF-8';
+
+                            $mail->Host       = "mail02.compleet.it"; 
+                            $mail->SMTPAuth   = true;                  
+                            $mail->SMTPSecure = "ssl";
+                            $mail->Port       = 465;                    
+                            $mail->Username   = "site@speeltuinwesterkwartier.nl"; 
+                            $mail->Password   = $SMTPWW;      
+                            $mail->setFrom('site@speeltuinwesterkwartier.nl','Speeltuinwesterkwartier');
+                            $mail->addAddress($email);
+
+                            // Content
+                            $mail->isHTML(true);                                  
+                            $mail->Subject = 'Nieuwsbrief speeltuin Westerkwartier';
+                            $mail->Body    = 'Uw heeft zich succesful ingeschreven op de nieuwsbrief van speeltuin westerkwartier<br><br>In de nieuwsbrief kunt uw verschillende dingen verwachten. Dit gaat van mails over activiteiten maar ook aankondegingen.<br><br> Afmelden? <a href="#">klik hier</a>';
+                            $mail->AltBody = 'Uw heeft zich succesful ingeschreven op de nieuwsbrief van speeltuin westerkwartier<br><br>In de nieuwsbrief kunt uw verschillende dingen verwachten. Dit gaat van mails over activiteiten maar ook aankondegingen.<br><br> Afmelden? <a href="#">klik hier</a>';
+
+                            $mail->send();
+                        }
+                        else{
+                            $error ="<br><div style='border-radius:10px; border:3px solid red; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Er is iets fout gegaan</p></div> <br>";
+                        } 
+                    }else{
+                        $error="<br><div style='border-radius:10px; border:3px solid orange; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Email is niet ingevult.</p></div><br>";
+                    }
+        }
         ?>
         <form method=post style="color:black;">
+            <label style='font-size:2rem;'>Uw e-mailadres*</label><input style="border-radius:10px; font-size:2rem;"  type=email name=email/><br>
+            <input type=submit name=add style="border-radius:10px; color:white; background-color:#004020; font-size:2rem;" value="Inschrijven"/>
+            <?php echo $error; ?>
         </form>
         <?php
 	}
@@ -154,7 +209,9 @@ class Nieuwsbrief extends Widget_Base {
 	protected function _content_template() {
         ?>
         <form method=post style="color:black;">
-            
+            <label style='font-size:2rem;'>Uw e-mailadres*</label><input style="border-radius:10px; font-size:2rem;"  type=email name=email/><br>
+            <input type=submit name=add style="border-radius:10px; color:white; background-color:#004020; font-size:2rem;" value="Inschrijven"/>
+            <?php echo $error; ?>
         </form>
         <?php
         require('dbconnect.php');
