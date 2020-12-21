@@ -192,7 +192,7 @@ class Emailverwijderen extends Widget_Base {
         ?>
         <form method=post id="form" style="color:black;">
             <label style="font-size:2.5rem; color:black;">Verwijder uw account</label><input style="border-radius:10px; font-size:2rem;"  type=email name=email placeholder=email/>
-            <input type=submit name=add style="border-radius:10px; color:white; background-color:#004020; font-size:2rem; width:100%; margin-top:1vh;" placeholder="Account verwijderen"/>
+            <input type=submit name=add style="border-radius:10px; color:white; background-color:#004020; font-size:2rem; width:100%; margin-top:1vh;" value="Account verwijderen"/>
             <?php echo $error; ?>
         </form>
         <?php
@@ -210,8 +210,8 @@ class Emailverwijderen extends Widget_Base {
 	protected function _content_template() {
         ?>
         <form method=post id="form" style="color:black;">
-            <label style='border-radius:10px; font-size:2rem;'>Verwijder uw account</label><input style="border-radius:10px; font-size:2rem;"  type=email name=email placeholder=email/>
-            <input type=submit name=add style="border-radius:10px; color:white; background-color:#004020; font-size:2rem;" placeholder="Account verwijderen"/>
+            <label style='border-radius:10px; font-size:2rem;'>Verwijder uw account</label><input style="border-radius:10px; font-size:2rem;"  type=email name=email placeholder=email >
+            <input type=submit name=add style="border-radius:10px; color:white; background-color:#004020; font-size:2rem;" value="Account verwijderen"/>
         </form>
         <?php
         require('dbconnect.php');
