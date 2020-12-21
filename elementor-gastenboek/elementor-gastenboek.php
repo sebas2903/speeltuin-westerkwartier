@@ -20,6 +20,7 @@ function my_plugin_menu1() {
     }
 
     function Settingstest(){
+        $error ="";
         require('widgets/dbconnect.php');
         if(isset($_POST['add'])) {
             $error ="<p>hallo</p>";
