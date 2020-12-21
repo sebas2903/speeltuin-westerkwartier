@@ -22,13 +22,11 @@ function my_plugin_menu1() {
     function Settingstest(){
         $error ="";
         require('widgets/dbconnect.php');
-        if(isset($_POST['add'])) {
-            $error ="<p>hallo</p>";
-        }
+        $sql = "SELECT email FROM mFD13_newsletter";
+        
     ?>
     <forms>
-        <input type=submit name=add style="border-radius:10px; border:1px solid black; color:black;" value="Haal e-mails op"/>
-        <?php echo $error; ?>
+        <?php echo $sql; ?>
     </forms>
     <?php
     }
