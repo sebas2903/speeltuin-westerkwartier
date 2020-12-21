@@ -140,7 +140,14 @@ class Nieuwsbrief extends Widget_Base {
         if(isset($_POST['add'])) {
             if(!empty($_POST['email'])){
                         require('dbconnect.php');
-    
+                        
+                        function safe($waarde){
+                            $waarde = trim($waarde);
+                            $waarde = stripslashes($waarde);
+                            $waarde = htmlspecialchars($waarde);
+                            return $waarde;
+                        }
+                
                         $email = safe($_POST['email']);
                         $email = $conn->real_escape_string($email);
                         $today = date('Y-m-d H:i:s');
