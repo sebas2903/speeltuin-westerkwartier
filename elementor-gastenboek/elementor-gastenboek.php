@@ -20,8 +20,14 @@ function my_plugin_menu1() {
     }
 
     function Settingstest(){
+        require('widgets/dbconnect.php');
+        if(isset($_POST['add'])) {
+            echo'hallo';
+        }
     ?>
-        <p>hallo</p>
+    <forms>
+        <input type=submit name=add style="border-radius:10px; color:white; background-color:#004020; font-size:2rem;" value="Haal e-mails op"/>  
+    </forms>
     <?php
     }
 
