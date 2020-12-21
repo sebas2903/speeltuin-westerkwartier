@@ -136,8 +136,8 @@ class Emailverwijderen extends Widget_Base {
 	 * @access protected
 	 */
 	protected function render() {
-       
-        }
+        
+        
         ?>
         <form method=post id="form" style="color:white;">
             <label style='font-size:2.5rem; color:white;'>Abboneer op onze nieuwsbrief</label><input style="border-radius:10px; font-size:2rem;"  type=email name=email placeholder=email/>
