@@ -162,7 +162,7 @@ class Nieuwsbrief extends Widget_Base {
                                 element.scrollIntoView(false);
                             </script>
                             
-                            <br><div style='border-radius:10px; border:3px solid green; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center; '><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Uw bent succesvol ingeschreven. Er is een bevestigings mail verstuurt.</p></div> <br>";
+                            <br><div id='form' style='border-radius:10px; border:3px solid green; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center; '><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Uw bent succesvol ingeschreven. Er is een bevestigings mail verstuurt.</p></div> <br>";
                             
                             
                             
@@ -196,7 +196,7 @@ class Nieuwsbrief extends Widget_Base {
                                 element.scrollIntoView(false);
                             </script>
                             
-                            <br><div style='border-radius:10px; border:3px solid red; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Er is iets fout gegaan</p></div> <br>";
+                            <br><div id='form' style='border-radius:10px; border:3px solid red; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Er is iets fout gegaan</p></div> <br>";
                         } 
                     }else{
                         $error ="
@@ -205,12 +205,12 @@ class Nieuwsbrief extends Widget_Base {
                             element.scrollIntoView(false);
                         </script>
                         
-                        <br><div style='border-radius:10px; border:3px solid orange; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Email is niet ingevult.</p></div><br>
+                        <br><div id='form' style='border-radius:10px; border:3px solid orange; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Email is niet ingevult.</p></div><br>
                         ";
                     }
         }
         ?>
-        <form method=post id="form" style="color:white;">
+        <form method=post style="color:white;">
             <label style='font-size:2.5rem; color:white;'>Abboneer op onze nieuwsbrief</label><input style="border-radius:10px; font-size:2rem;"  type=email name=email placeholder=email/>
             <input type=submit name=add style="border-radius:10px; color:black; background-color:white; font-size:2rem; width:100%; margin-top:1vh;" value="Inschrijven"/>
             <?php echo $error; ?>
