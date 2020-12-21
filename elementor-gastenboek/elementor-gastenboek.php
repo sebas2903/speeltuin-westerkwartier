@@ -21,7 +21,7 @@ function my_plugin_menu1() {
 
     function Settingstest(){
         ?>
-        <p>Hier onder zijn alle e-mails die zijn ingeschreven op de nieuwsbrief.<br> kopieer deze in het adresbalk van de mail en verstuur de mail om zo ze allemaal een nieuwsbrief te sturen.<br><br>Het is handig om helemaal aan het eind van de email een link te zetten naar https://speeltuinwesterkwartier.nl/e-mail-verwijderen/ waar mensen zich kunnen uitschrijven. <br>De ingeschreven email:</p>
+        <p>Hier onder zijn alle e-mails die zijn ingeschreven op de nieuwsbrief.<br> kopieer deze in het adresbalk van de mail en verstuur de mail om zo ze allemaal een nieuwsbrief te sturen.<br><br>Het is handig om helemaal aan het eind van de email een link te zetten naar https://speeltuinwesterkwartier.nl/e-mail-verwijderen/ waar mensen zich kunnen uitschrijven.</p>
         <?php
         $error ="";
         require('widgets/dbconnect.php');
