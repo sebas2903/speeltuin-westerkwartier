@@ -13,9 +13,9 @@
  define( 'ELEMENTOR_GASTENBOEK', __FILE__ );
 
  add_action( 'admin_init', 'register_Settings' );
- add_action( 'admin_menu', 'my_plugin_menu' );
+ add_action( 'admin_menu', 'my_plugin_menu1' );
 
-function my_plugin_menu() {
+function my_plugin_menu1() {
         add_options_page( 'Settingstest', 'E-mails ophalen', 'manage_options', 'E-mails ophalen', 'Settingstest' );
     }
 
