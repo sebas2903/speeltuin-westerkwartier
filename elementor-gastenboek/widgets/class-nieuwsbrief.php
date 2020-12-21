@@ -188,6 +188,7 @@ class Nieuwsbrief extends Widget_Base {
                         } 
                     }else{
                         $error ="<script type='text/javascript'>
+                        console.log('test');
                         element.scrollIntoView(false);
                         
                         </script>";
