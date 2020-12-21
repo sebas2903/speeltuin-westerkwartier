@@ -188,10 +188,7 @@ class Nieuwsbrief extends Widget_Base {
                         } 
                     }else{
                         $error ="<script type='text/javascript'>
-                        scrollingElement = (document.scrollingElement || document.body)
-                            function scrollToBottom () {
-                                scrollingElement.scrollTop = scrollingElement.scrollHeight;
-                            }
+                        element.scrollIntoView(false);
                         
                         </script>";
                     }
