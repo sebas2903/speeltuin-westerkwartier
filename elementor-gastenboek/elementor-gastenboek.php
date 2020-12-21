@@ -28,7 +28,7 @@ function my_plugin_menu1() {
         if ($result->num_rows > 0) {
         // output data of each row
             while($row = $result->fetch_assoc()) {
-                echo "<br>".$row["email"]."<br>"
+                echo "<br>".$row["email"]."<br>";
             }
         }
         
