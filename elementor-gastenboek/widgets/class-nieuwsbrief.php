@@ -188,7 +188,7 @@ class Nieuwsbrief extends Widget_Base {
                         } 
                     }else{
                         $message = "Uw bent succesvol ingeschreven";
-                        $error="<script type='text/JavaScrip'>alert('$message');</script>";
+                        $error ="<script type='text/javascript'>alert('$message');</script>";
                     }
         }
         ?>
