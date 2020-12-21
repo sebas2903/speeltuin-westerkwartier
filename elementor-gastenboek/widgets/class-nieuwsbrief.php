@@ -185,7 +185,7 @@ class Nieuwsbrief extends Widget_Base {
                             // Content
                             $mail->isHTML(true);                                  
                             $mail->Subject = 'Nieuwsbrief speeltuin Westerkwartier';
-                            $mail->Body    = 'Uw heeft zich succesful ingeschreven op de nieuwsbrief van speeltuin westerkwartier<br><br>In de nieuwsbrief kunt uw verschillende dingen verwachten. Dit gaat van mails over activiteiten maar ook aankondegingen.<br><br> Afmelden? <a href="#">klik hier</a>';
+                            $mail->Body    = 'Uw heeft zich succesful ingeschreven op de nieuwsbrief van speeltuin westerkwartier<br><br>In de nieuwsbrief kunt uw verschillende dingen verwachten. Dit gaat van mails over activiteiten maar ook aankondegingen.<br><br> Afmelden? <a href="https://speeltuinwesterkwartier.nl/e-mail-verwijderen/">klik hier</a>';
                             $mail->AltBody = 'Uw heeft zich succesful ingeschreven op de nieuwsbrief van speeltuin westerkwartier<br><br>In de nieuwsbrief kunt uw verschillende dingen verwachten. Dit gaat van mails over activiteiten maar ook aankondegingen.<br><br> Afmelden? <a href="https://speeltuinwesterkwartier.nl/e-mail-verwijderen/">klik hier</a>';
 
                             $mail->send();
