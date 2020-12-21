@@ -156,8 +156,8 @@ class Nieuwsbrief extends Widget_Base {
                         VALUES ('$email', NULL, '$today')";
                         
                         if($conn->query($sql)){
-                            $message = "Uw bent succesvol ingeschreven";
-                            $error ="<script type='text/javascript'>alert('$message');</script>";
+                            $error ="<br><div style='border-radius:10px; border:3px solid green; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center; '><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Uw bent succesvol ingeschreven</p></div> <br>";
+                            
                             
                             
                             $mail = new PHPMailer(true);
@@ -184,7 +184,7 @@ class Nieuwsbrief extends Widget_Base {
                             $mail->send();
                         }
                         else{
-                            $error ="<br><div style='border-radius:10px; border:3px solid red; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Er is iets fout gegaan</p></div> <br>";
+                            $error ="<br><div style='border-radius:10px; border:3px solid red; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center; display:absolute;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Er is iets fout gegaan</p></div> <br>";
                         } 
                     }else{
                         $error="<br><div style='border-radius:10px; border:3px solid orange; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Email is niet ingevult.</p></div><br>";
