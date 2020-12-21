@@ -212,6 +212,7 @@ class Emailverwijderen extends Widget_Base {
             <label style='border-radius:10px; font-size:2rem;'>Verwijder uw account</label><input style="border-radius:10px; font-size:2rem;"  type=email name=email placeholder=email/>
             <input type=submit name=add style="border-radius:10px; color:white; background-color:#004020; font-size:2rem;" value="Account verwijderen"/>
             <?php echo $error; ?>
+        </form>
         <?php
         require('dbconnect.php');
             
