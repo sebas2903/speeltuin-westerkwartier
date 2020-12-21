@@ -26,7 +26,7 @@ function my_plugin_menu1() {
         }
     ?>
     <forms>
-        <input type=submit name=add style="border-radius:10px; color:white; background-color:#004020; font-size:2rem;" value="Haal e-mails op"/>  
+        <input type=submit name=add style="border-radius:10px; border:1px solid black; color:black;" value="Haal e-mails op"/>  
     </forms>
     <?php
     }
