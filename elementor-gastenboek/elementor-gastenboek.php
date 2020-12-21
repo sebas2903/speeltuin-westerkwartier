@@ -23,11 +23,16 @@ function my_plugin_menu1() {
         $error ="";
         require('widgets/dbconnect.php');
         $sql = "SELECT email FROM mFD13_newsletter";
+        $result = $conn->query($sql);
+        
+        if ($result->num_rows > 0) {
+        // output data of each row
+            while($row = $result->fetch_assoc()) {
+                echo $row["email"];
+            }
+        }
         
     ?>
-    <forms>
-        <?php echo $sql; ?>
-    </forms>
     <?php
     }
 
