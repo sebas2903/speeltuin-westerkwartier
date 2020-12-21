@@ -192,7 +192,7 @@ class Emailverwijderen extends Widget_Base {
         ?>
         <form method=post id="form" style="color:black;">
             <label style="font-size:2.5rem; color:black;">Verwijder uw account</label><input style="border-radius:10px; font-size:2rem;"  type=email name=email placeholder=email/>
-            <input type=submit name=add style="border-radius:10px; color:white; background-color:#004020; font-size:2rem; width:100%; margin-top:1vh;" value="Inschrijven"/>
+            <input type=submit name=add style="border-radius:10px; color:white; background-color:#004020; font-size:2rem; width:100%; margin-top:1vh;" value="Account verwijderen"/>
             <?php echo $error; ?>
         </form>
         <?php
