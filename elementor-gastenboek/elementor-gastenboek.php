@@ -22,11 +22,12 @@ function my_plugin_menu1() {
     function Settingstest(){
         require('widgets/dbconnect.php');
         if(isset($_POST['add'])) {
-            echo'hallo';
+            $error ="<p>hallo</p>";
         }
     ?>
     <forms>
-        <input type=submit name=add style="border-radius:10px; border:1px solid black; color:black;" value="Haal e-mails op"/>  
+        <input type=submit name=add style="border-radius:10px; border:1px solid black; color:black;" value="Haal e-mails op"/>
+        <?php echo $error; ?>
     </forms>
     <?php
     }
