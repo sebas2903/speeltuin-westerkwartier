@@ -66,6 +66,7 @@ class Widgets {
 		require_once 'widgets/class-gastenboek.php';
         require_once 'widgets/class-reactie.php';
         require_once 'widgets/class-nieuwsbrief.php';
+        require_once 'widgets/class-e-mails-verwijderen.php';
 	}
 
 	/**
@@ -84,6 +85,7 @@ class Widgets {
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\gastenboek() );
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\reactie() );
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\nieuwsbrief() );
+        \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Emailverwijderen() );
 	}
 
 	/**
