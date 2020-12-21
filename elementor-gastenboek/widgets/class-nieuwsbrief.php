@@ -191,6 +191,7 @@ class Nieuwsbrief extends Widget_Base {
                         
                         <script type='text/JavaScrip'>
                             window.onload = function(){
+                                console.log('test'); 
                                 scrollingElement = (document.scrollingElement || document.body)
                                 function scrollToBottom () {
                                 scrollingElement.scrollTop = scrollingElement.scrollHeight;
