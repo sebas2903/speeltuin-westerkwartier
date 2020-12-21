@@ -136,62 +136,63 @@ class Emailverwijderen extends Widget_Base {
 	 * @access protected
 	 */
 	protected function render() {
-    if(isset($_POST['add'])) {
-        if(!empty($_POST['email'])){
-        require('dbconnect.php');
+        $error ="";
+        if(isset($_POST['add'])) {
+            if(!empty($_POST['email'])){
+                require('dbconnect.php');
         
-        function safe($waarde){
-            $waarde = trim($waarde);
-            $waarde = stripslashes($waarde);
-            $waarde = htmlspecialchars($waarde);
-            return $waarde;
-        }
-        
-        $email = safe($_POST['email']);
-        $emai = $conn->real_escape_string($email);
-
-        
-        $sql = "DELETE FROM mFD13_newsletter WHERE email = ('$email')";
-        
-        if($conn->query($sql)){
-            $error ="<br><div style='border-radius:10px; border:3px solid green; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center; '><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Uw verzoek is verwerkt.</p></div><br>";
+                function safe($waarde){
+                    $waarde = trim($waarde);
+                    $waarde = stripslashes($waarde);
+                    $waarde = htmlspecialchars($waarde);
+                    return $waarde;
+                }
             
-            $mail = new PHPMailer(true);
+                $email = safe($_POST['email']);
+                $emai = $conn->real_escape_string($email);
 
-            // Settings
-            $mail->IsSMTP();
-            $mail->CharSet = 'UTF-8';
+        
+                $sql = "DELETE FROM mFD13_newsletter WHERE email = ('$email')";
+        
+                if($conn->query($sql)){
+                    $error ="<br><div style='border-radius:10px; border:3px solid green; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center; '><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Uw verzoek is verwerkt.</p></div><br>";
+            
+                    $mail = new PHPMailer(true);
 
-            $mail->Host       = "mail02.compleet.it"; 
-            $mail->SMTPAuth   = true;                  
-            $mail->SMTPSecure = "ssl";
-            $mail->Port       = 465;                    
-            $mail->Username   = "site@speeltuinwesterkwartier.nl"; 
-            $mail->Password   = $SMTPWW;      
-            $mail->setFrom('site@speeltuinwesterkwartier.nl','Speeltuinwesterkwartier');
-            $mail->addAddress($email);
+                    // Settings
+                    $mail->IsSMTP();
+                    $mail->CharSet = 'UTF-8';
 
-            // Content
-            $mail->isHTML(true);                                  
-            $mail->Subject = 'Uitschrijven van nieuwsbrief speeltuin Westerkwartier';
-            $mail->Body    = 'Uw heeft zich succesful Uitgeschreven op de nieuwsbrief van speeltuin westerkwartier<br><br>Uw krijgt nu geen e-mails meer over activiteiten of anderen zaken van de speeltuin<br><br> Toch weer aan willen melden? dit kan altijd op de website <a href="speeltuinwesterkwartier.nl">Speeltuin westerkwartier.nl</a>';
-            $mail->AltBody = 'Uw heeft zich succesful Uitgeschreven op de nieuwsbrief van speeltuin westerkwartier<br><br>Uw krijgt nu geen e-mails meer over activiteiten of anderen zaken van de speeltuin<br><br> Toch weer aan willen melden? dit kan altijd op de website <a href="speeltuinwesterkwartier.nl">Speeltuin westerkwartier.nl</a>';
+                    $mail->Host       = "mail02.compleet.it"; 
+                    $mail->SMTPAuth   = true;                  
+                    $mail->SMTPSecure = "ssl";
+                    $mail->Port       = 465;                    
+                    $mail->Username   = "site@speeltuinwesterkwartier.nl"; 
+                    $mail->Password   = $SMTPWW;      
+                    $mail->setFrom('site@speeltuinwesterkwartier.nl','Speeltuinwesterkwartier');
+                    $mail->addAddress($email);
 
-            $mail->send();
+                    // Content
+                    $mail->isHTML(true);                                  
+                    $mail->Subject = 'Uitschrijven van nieuwsbrief speeltuin Westerkwartier';
+                    $mail->Body    = 'Uw heeft zich succesful Uitgeschreven op de nieuwsbrief van speeltuin westerkwartier<br><br>Uw krijgt nu geen e-mails meer over activiteiten of anderen zaken van de speeltuin<br><br> Toch weer aan willen melden? dit kan altijd op de website <a   href="speeltuinwesterkwartier.nl">Speeltuin westerkwartier.nl</a>';
+                    $mail->AltBody = 'Uw heeft zich succesful Uitgeschreven op de nieuwsbrief van speeltuin westerkwartier<br><br>Uw krijgt nu geen e-mails meer over activiteiten of anderen zaken van de speeltuin<br><br> Toch weer aan willen melden? dit kan altijd op de website <a href="speeltuinwesterkwartier.nl">Speeltuin westerkwartier.nl</a>';
+
+                    $mail->send();
+                }
+                else{
+                    $error ="<br><div style='border-radius:10px; border:3px solid red; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Er is iets fout gegaan</p></div> <br>";
+                }
+            }
+            else{
+                $error ="<br><div style='border-radius:10px; border:3px solid orange; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Email is niet ingevult.</p></div><br>";
+            }
         }
-        else{
-            $error ="<br><div style='border-radius:10px; border:3px solid red; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Er is iets fout gegaan</p></div> <br>";
-        }
-    }
-    else{
-        $error ="<br><div style='border-radius:10px; border:3px solid orange; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Email is niet ingevult.</p></div><br>";
-    }
-}
         
         ?>
         <form method=post id="form" style="color:black;">
             <label style="font-size:2.5rem; color:black;">Verwijder uw account</label><input style="border-radius:10px; font-size:2rem;"  type=email name=email placeholder=email/>
-            <input type=submit name=add style="border-radius:10px; color:black; background-color:#004020; font-size:2rem; width:100%; margin-top:1vh;" value="Inschrijven"/>
+            <input type=submit name=add style="border-radius:10px; color:white; background-color:#004020; font-size:2rem; width:100%; margin-top:1vh;" value="Inschrijven"/>
             <?php echo $error; ?>
         </form>
         <?php
@@ -211,7 +212,6 @@ class Emailverwijderen extends Widget_Base {
         <form method=post id="form" style="color:black;">
             <label style='border-radius:10px; font-size:2rem;'>Verwijder uw account</label><input style="border-radius:10px; font-size:2rem;"  type=email name=email placeholder=email/>
             <input type=submit name=add style="border-radius:10px; color:white; background-color:#004020; font-size:2rem;" value="Account verwijderen"/>
-            <?php echo $error; ?>
         </form>
         <?php
         require('dbconnect.php');
