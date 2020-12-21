@@ -156,7 +156,13 @@ class Nieuwsbrief extends Widget_Base {
                         VALUES ('$email', NULL, '$today')";
                         
                         if($conn->query($sql)){
-                            $error ="<br><div style='border-radius:10px; border:3px solid green; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center; '><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Uw bent succesvol ingeschreven</p></div> <br>";
+                            $error ="
+                            <script type='text/javascript'>
+                                var element = document.getElementById('form');
+                                element.scrollIntoView(false);
+                            </script>
+                            
+                            <br><div style='border-radius:10px; border:3px solid green; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center; '><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Uw bent succesvol ingeschreven</p></div> <br>";
                             
                             
                             
@@ -184,14 +190,23 @@ class Nieuwsbrief extends Widget_Base {
                             $mail->send();
                         }
                         else{
-                            $error ="<br><div style='border-radius:10px; border:3px solid red; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Er is iets fout gegaan</p></div> <br>";
+                            $error ="
+                            <script type='text/javascript'>
+                                var element = document.getElementById('form');
+                                element.scrollIntoView(false);
+                            </script>
+                            
+                            <br><div style='border-radius:10px; border:3px solid red; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Er is iets fout gegaan</p></div> <br>";
                         } 
                     }else{
-                        $error ="<script type='text/javascript'>
-                        var element = document.getElementById('form');
-                        element.scrollIntoView(false);
+                        $error ="
+                        <script type='text/javascript'>
+                            var element = document.getElementById('form');
+                            element.scrollIntoView(false);
+                        </script>
                         
-                        </script>";
+                        <br><div style='border-radius:10px; border:3px solid orange; margin-top:2vh; margin-bottom:2vh; display:flex; align-items:center;'><p style='margin:0; font-size:2rem; line-height:2; display:flex; align-items:center;'>Email is niet ingevult.</p></div><br>
+                        ";
                     }
         }
         ?>
