@@ -212,7 +212,7 @@ class Nieuwsbrief extends Widget_Base {
         ?>
         <form method=post style="color:black;">
             <label style='font-size:2.5rem; color:white;'>Abboneer op onze nieuwsbrief</label><input style="border-radius:10px; font-size:2rem;"  type=email name=email value=email/>
-            <input type=submit name=add style="border-radius:10px; color:black; background-color:white; font-size:2rem; width:100%; margin-top:1vh;" value="Inschrijven"/>
+            <input type=submit name=add style="border-radius:10px; color:black; background-color:white; font-size:2rem; width:100%; margin-top:1vh;" placeholder="Inschrijven"/>
             <?php echo $error; ?>
         </form>
         <?php
@@ -231,7 +231,7 @@ class Nieuwsbrief extends Widget_Base {
         ?>
         <form method=post style="color:black;">
             <label style='font-size:2.5rem; color:white;'>Abboneer op onze nieuwsbrief</label><input style="border-radius:10px; font-size:2rem;"  type=email name=email value=email/>
-            <input type=submit name=add style="border-radius:10px; color:black; background-color:white; font-size:2rem; width:100%; margin-top:1vh;" value="Inschrijven"/>
+            <input type=submit name=add style="border-radius:10px; color:black; background-color:white; font-size:2rem; width:100%; margin-top:1vh;" placeholder="Inschrijven"/>
             <?php echo $error; ?>
         </form>
         <?php
