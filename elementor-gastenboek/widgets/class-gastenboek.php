@@ -143,6 +143,12 @@ class Gastenboek extends Widget_Base {
                 if(!empty($_POST['email'])){
                     if(!empty($_POST['bericht'])){
                         require('dbconnect.php');
+                        function safe($waarde){
+                        $waarde = trim($waarde);
+                        $waarde = stripslashes($waarde);
+                        $waarde = htmlspecialchars($waarde);
+                        return $waarde;
+                        }
                         
                         $naam = safe($_POST['naam']);
                         $naam = $conn->real_escape_string($naam);
