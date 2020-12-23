@@ -136,7 +136,6 @@ class Reactie extends Widget_Base {
         $result = $conn->query($sql);
             
         if ($result->num_rows > 0) {
-            // output data of each row
             while($row = $result->fetch_assoc()) {
                 echo "
                 <div style='width:100%; border:1px solid #004020; border-radius:10px; margin-top:2vh;'>
